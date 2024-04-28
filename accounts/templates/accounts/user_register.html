@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>user_registeration page</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for fm in form %}
+          {{fm.label_tag}} {{fm}} {{fm.error}} <br><br>
+        {% endfor %}
+        <input type="submit" , value="user_register">
+    </form>
+    
+</body>
+</html>

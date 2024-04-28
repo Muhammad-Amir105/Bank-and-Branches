@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bank detail</h1>
+    <h2>Name: {{bank.name}}</h2>
+    <h2>swift_code: {{bank.swift_code}}</h2>
+    <h2>institution_number :{{bank.institution_number}}</h2>
+
+    <h1>Branches</h1>
+    <ul>
+        {% for branch in bank.branch_set.all %}
+            <li><a href="{% url 'branchdetails' pk=branch.pk %}">{{ branch.name }}</a></li>
+            <br>
+        {% endfor %}
+    </ul>
+    
+    <button type="submit"><a href="{% url 'addbranch' pk=bank.pk %}">Add Branch</a></button>
+    <button type="submit"> <a href="{% url 'user_logout'%}">Logout</a></button>
+
+
+
+</body>
+</html>

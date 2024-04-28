@@ -1,0 +1,11 @@
+<h1>User profile </h1>
+{% for i in user %}
+    <h2>User_id : {{i.id}}</h2>
+    <h2>Username : <a href="{% url 'showbank' pk=i.id%}">{{i.username}}</a></h2>
+    <h2>Email : {{i.email}}</h2>
+    <h2>First_name : {{i.first_name}}</h2>
+    <h2>Last_name : {{i.last_name}}</h2>
+    
+{% endfor %}
+
+
